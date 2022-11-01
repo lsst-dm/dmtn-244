@@ -1,0 +1,16 @@
+
+\begin{abstract}
+Data processing pipelines need to be executed at scales ranging from
+small runs up through large production data release runs resulting in
+millions of data products.  As part of the Rubin Observatory's pipeline
+execution system, bps is the abstraction layer that provides an interface
+to different Workflow Management Systems (WMS) such as HTCondor and PanDA.
+During the submission process, the pipeline execution system interacts
+with the Data Butler to produce science-oriented execution graphs from
+algorithmic tasks.  bps converts this execution graph to a workflow graph
+and then uses a WMS-specific plugin to submit and manage the workflow.
+Here we will discuss the architectural design of this interface and
+report briefly on the recent production of the Data Preview 0.2 release
+and how the system is used by pipeline developers.
+\end{abstract}
+
