@@ -1,6 +1,4 @@
-DOCTYPE = DMTN
-DOCNUMBER = 244
-DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
+DOCNAME = P52
 
 tex = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
@@ -13,7 +11,7 @@ endif
 
 export TEXMFHOME ?= lsst-texmf/texmf
 
-#asp tex is a bit odd so latexml fails .. 
+#asp tex is a bit odd so latexml fails ..
 $(DOCNAME).pdf: $(tex) meta.tex local.bib authors.tex acronyms.tex
 	latex $(DOCNAME)
 	bibtex $(DOCNAME)
@@ -28,7 +26,7 @@ acronyms.tex: $(tex) myacronyms.txt
 	$(TEXMFHOME)/../bin/generateAcronyms.py -t "DM" $(tex)
 
 authors.tex:  authors.yaml
-	python3 $(TEXMFHOME)/../bin/db2authors.py --mode adass > authors.tex 
+	python3 $(TEXMFHOME)/../bin/db2authors.py --mode adass > authors.tex
 
 .PHONY: clean
 clean:
