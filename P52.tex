@@ -15,7 +15,8 @@
 
 \bibliographystyle{asp2014}
 
-\markboth{Gower, et al.}{Adding Workflow Management Flexibility to LSST Pipelines Execution}
+\markboth{Gower et al.}{Workflow Management Flexibility in LSST Pipelines Execution}
+% to LSST Pipe-lines Exe-cu-tion}
 % remove/add as you need
 
 \begin{document}
@@ -49,15 +50,12 @@
 % remove/add as you need
 
 % leave the ssindex lines commented for the editors to enable them, use Index.py to suggest yours
-%\ssindex{FOOBAR!conference!ADASS 2022}
-%\ssindex{FOOBAR!organisations!ASP}
-
 %\ssindex{LSST}
+%\ssindex{observatories!ground-based!LSST}
 %\ssindex{observatories!ground-based!Rubin}
 %\ssindex{data!management!workflows}
 
 % leave the ooindex lines commented for the editors to enable them, use ascl.py to suggest yours
-%\ooindex{FOOBAR, ascl:1101.010}
 
 \begin{abstract}
 
@@ -79,13 +77,14 @@ and how the system is used by pipeline developers.
 \section{Introduction}
 
 A large amount of images will be taken during the 10-year Legacy Survey
-of Space and Time \citep[LSST;][]{2019ApJ...873..111I, I08_adassxxxii}.  Processing of this
-data will be done at scales ranging from small runs up through large
-production data release runs.
-Data processing will be done using data management and execution systems
-for the Rubin Observatory LSST Science Pipelines with the Data Butler and science-oriented execution graphs \citep{C24_adassxxxii,2022SPIE12189E..11J}.
+of Space and Time \citep[LSST;][]{2019ApJ...873..111I, I08_adassxxxii}.
+Processing of this data will be done at scales ranging from small runs
+up through large production data release runs.  Data processing will be
+done using data management and execution systems for the Rubin Observatory
+LSST Science Pipelines with the Data Butler and science-oriented execution
+graphs \citep{C24_adassxxxii,2022SPIE12189E..11J}.
 
-The Data Butler is the system that abstracts the data access details from
+The Data Butler is the system that abstracts the data access de-tails from
 the pipeline developers.  A Quantum is the work to be done on a single set
 of inputs (e.g., remove instrument signature on the raw image for detector
 3 of exposure 12345). These Quanta take inputs and produce outputs which
@@ -159,8 +158,8 @@ clustering.  The user-specified clustering is done by common data values
 workflow.
 
 \subsection{Generic Workflow} \label{generic_workflow}
-The generic workflow is a directed acyclic graph containing runtime
-information needed to submit to a workflow management system.  Each
+The generic workflow is a directed acyclic graph con-tain-ing run-time
+in-for-ma-tion needed to submit to a workflow management system.  Each
 cluster becomes a job in the workflow.  The job's command line and
 resource requirements (e.g., memory, cpu, walltime, batch queue) are
 added here.  In addition to jobs representing clusters, two special jobs
@@ -231,26 +230,24 @@ While not currently officially maintained and supported by the core team,
 there is also a Pegasus \citep{10.1016/j.future.2014.10.008} plugin and
 a Parsl \citep{10.1145/3307681.3325400} plugin.
 
-Development is ongoing across the entire middleware.  Besides updating for
-these changes and making plugin improvements, there are a few areas where
-work is planned.  While still overall useful, BPS's report has became less
-informative for the user with clustering.  They want to know which Quanta
-failed and for what reason.  Clustering also has caused problems with
-the current command lines.  Work is ongoing for a special job runner that
-will solve the long command line issue as well as open avenues for doing
-other things inside a job across multiple workflow management systems such as sending output to real-time log aggregators.
+Development is ongoing across the entire middleware.  Besides updating
+for these changes and making plugin improvements, there are a few areas
+where work is planned.  While still overall useful, BPS's report has
+became less informative for the user with clustering.  They want to know
+which Quanta failed and for what reason.  Clustering also has caused
+problems with the current command lines.  Work is ongoing for a special
+job runner that will solve the long command line issue as well as open
+avenues for doing other things inside a job across multiple workflow
+management systems such as sending output to real-time log aggregators.
 
-\section*{Acknowledgements}
-
-This material is based upon work
-supported in part by the National Science Foundation through Cooperative
-Agreement AST-1258333 and Cooperative Support Agreement AST-1202910
-managed by the Association of Universities for Research in Astronomy
-(AURA), and the Department of Energy under Contract No.\ DE-AC02-76SF00515
-with the SLAC National Accelerator Laboratory managed by Stanford
-University. Additional Rubin Observatory funding comes from private
-donations, grants to universities, and in-kind support from LSSTC
-Institutional Members.
+\acknowledgements This material is based upon work supported in part by
+the National Science Foundation through Cooperative Agreement AST-1258333
+and Cooperative Support Agreement AST-1202910 managed by the Association
+of Universities for Research in Astronomy (AURA), and the Department
+of Energy under Contract No.\ DE-AC02-76SF00515 with the SLAC National
+Accelerator Laboratory managed by Stanford University. Additional Rubin
+Observatory funding comes from private donations, grants to universities,
+and in-kind support from LSSTC Institutional Members.
 
 \bibliography{P52}
 
