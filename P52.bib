@@ -1,8 +1,25 @@
 %  you will need to comment out the \bibliography{P52} line in your P52.tex file
 
+@ARTICLE{2019ApJ...873..111I,
+      author = {{Ivezi{\'c}}, {\v Z}. and others},
+       title = "{LSST: From Science Drivers to Reference Design and Anticipated Data Products}",
+      journal = {\apj},
+archivePrefix = "arXiv",
+       eprint = {0805.2366},
+     keywords = {astrometry, cosmology: observations, Galaxy: general, methods: observational, stars: general, surveys},
+         year = 2019,
+        month = mar,
+       volume = 873,
+          eid = {111},
+        pages = {111},
+          doi = {10.3847/1538-4357/ab042c},
+       adsurl = {http://adsabs.harvard.edu/abs/2019ApJ...873..111I},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
 @inproceedings{C24_adassxxxii,
         title = {Data management and execution systems for the Rubin Observatory Science Pipelines},
-     author   = {{Lust}, Nate et al},
+     author   = {{Lust}, Nate and others},
     booktitle = {ADASS XXXII},
          year = 2023,
        editor = {{Gaudet}, S. and {Gwyn}, S. and {Dowler}, P. and {Bohlender}, D. and {Hincks}, A.},
@@ -14,17 +31,37 @@
 }
 
 @inproceedings{I08_adassxxxii,
-   title = {Software Architecture and System Design of Rubin Observatory},
- author   = {{O’Mullane}, William et al},
- booktitle = {ADASS XXXII},
-    year = 2023,
-   editor = {{Gaudet}, S. and {Gwyn}, S. and {Dowler}, P. and {Bohlender}, D. and {Hincks}, A.},
+        title = {Software Architecture and System Design of Rubin Observatory},
+     author   = {{O`Mullane}, William and others},
+    booktitle = {ADASS XXXII},
+         year = 2023,
+       editor = {{Gaudet}, S. and {Gwyn}, S. and {Dowler}, P. and {Bohlender}, D. and {Hincks}, A.},
    volume     = {TBD},
    series     = {ASP Conf. Ser.},
     pages     = {999 TBD},
- publisher = “ASP”,
-  address = {San Francisco},
+    publisher = “ASP”,
+      address = {San Francisco},
 }
+
+@INPROCEEDINGS{2022SPIE12189E..11J,
+       author = {{Jenness}, Tim and others},
+        title = "{The Vera C. Rubin Observatory Data Butler and pipeline execution system}",
+     keywords = {Astrophysics - Instrumentation and Methods for Astrophysics, Computer Science - Distributed, Parallel, and Cluster Computing},
+    booktitle = {Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series},
+         year = 2022,
+       series = {SPIE},
+       volume = {12189},
+        month = aug,
+          eid = {1218911},
+        pages = {1218911},
+          doi = {10.1117/12.2629569},
+archivePrefix = {arXiv},
+       eprint = {2206.14941},
+ primaryClass = {astro-ph.IM},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022SPIE12189E..11J},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
 
 @misc{RTN-039,
   title = {Compute Resource Usage of DP0.2 Production Run},
@@ -36,3 +73,64 @@
   publisher = {{Vera C. Rubin Observatory }},
   url = {https://rtn-039.lsst.io/} }
 }
+
+@article{10.1002/cpe.938,
+  doi       = {10.1002/cpe.938},
+  title     = {{Distributed computing in practice: the Condor experience}},
+  author    = {Thain, Douglas and Tannenbaum, Todd and Livny, Miron},
+  journal   = {Concurrency and computation: practice and experience},
+  volume    = {17},
+  number    = {2-4},
+  pages     = {323--356},
+  year      = {2005},
+  publisher = {Wiley Online Library}
+}
+
+@article{10.1088/1742-6596/331/7/072024,
+  doi       = {10.1088/1742-6596/331/7/072024},
+  url       = {https://doi.org/10.1088/1742-6596/331/7/072024},
+  year      = 2011,
+  month     = dec,
+  publisher = {{IOP} Publishing},
+  volume    = {331},
+  number    = {7},
+  pages     = {072024},
+  author    = {T Maeno and others},
+  title     = {Overview of {ATLAS} {PanDA} Workload Management},
+  journal   = {Journal of Physics: Conference Series},
+  abstract  = {The Production and Distributed Analysis System (PanDA) plays a key role in the ATLAS distributed computing infrastructure. All ATLAS Monte-Carlo simulation and data reprocessing jobs pass through the PanDA system. We will describe how PanDA manages job execution on the grid using dynamic resource estimation and data replication together with intelligent brokerage in order to meet the scaling and automation requirements of ATLAS distributed computing. PanDA is also the primary ATLAS system for processing user and group analysis jobs, bringing further requirements for quick, flexible adaptation to the rapidly evolving analysis use cases of the early datataking phase, in addition to the high reliability, robustness and usability needed to provide efficient and transparent utilization of the grid for analysis users. We will describe how PanDA meets ATLAS requirements, the evolution of the system in light of operational experience, how the system has performed during the first LHC data-taking phase and plans for the future.}
+}
+
+@article{10.1016/j.future.2014.10.008,
+  title    = {Pegasus, a workflow management system for science automation},
+  journal  = {Future Generation Computer Systems},
+  volume   = {46},
+  pages    = {17-35},
+  year     = {2015},
+  issn     = {0167-739X},
+  doi      = {https://doi.org/10.1016/j.future.2014.10.008},
+  url      = {https://www.sciencedirect.com/science/article/pii/S0167739X14002015},
+  author   = {Ewa Deelman and others},
+  keywords = {Scientific workflows, Workflow management system, Pegasus},
+  abstract = {Modern science often requires the execution of large-scale, multi-stage simulation and data analysis pipelines to enable the study of complex systems. The amount of computation and data involved in these pipelines requires scalable workflow management systems that are able to reliably and efficiently coordinate and automate data movement and task execution on distributed computational resources: campus clusters, national cyberinfrastructures, and commercial and academic clouds. This paper describes the design, development and evolution of the Pegasus Workflow Management System, which maps abstract workflow descriptions onto distributed computing infrastructures. Pegasus has been used for more than twelve years by scientists in a wide variety of domains, including astronomy, seismology, bioinformatics, physics and others. This paper provides an integrated view of the Pegasus system, showing its capabilities that have been developed over time in response to application needs and to the evolution of the scientific computing platforms. The paper describes how Pegasus achieves reliable, scalable workflow execution across a wide variety of computing infrastructures.}
+}
+
+
+@inproceedings{10.1145/3307681.3325400,
+  author    = {Babuji, Yadu and others},
+  title     = {{Parsl: Pervasive Parallel Programming in Python}},
+  year      = {2019},
+  isbn      = {9781450366700},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3307681.3325400},
+  doi       = {10.1145/3307681.3325400},
+  abstract  = {High-level programming languages such as Python are increasingly used to provide intuitive interfaces to libraries written in lower-level languages and for assembling applications from various components. This migration towards orchestration rather than implementation, coupled with the growing need for parallel computing (e.g., due to big data and the end of Moore's law), necessitates rethinking how parallelism is expressed in programs. Here, we present Parsl, a parallel scripting library that augments Python with simple, scalable, and flexible constructs for encoding parallelism. These constructs allow Parsl to construct a dynamic dependency graph of components that it can then execute efficiently on one or many processors. Parsl is designed for scalability, with an extensible set of executors tailored to different use cases, such as low-latency, high-throughput, or extreme-scale execution. We show, via experiments on the Blue Waters supercomputer, that Parsl executors can allow Python scripts to execute components with as little as 5 ms of overhead, scale to more than 250000 workers across more than 8000 nodes, and process upward of 1200 tasks per second. Other Parsl features simplify the construction and execution of composite programs by supporting elastic provisioning and scaling of infrastructure, fault-tolerant execution, and integrated wide-area data management. We show that these capabilities satisfy the needs of many-task, interactive, online, and machine learning applications in fields such as biology, cosmology, and materials science.},
+  booktitle = {Proceedings of the 28th International Symposium on High-Performance Parallel and Distributed Computing},
+  pages     = {25–36},
+  numpages  = {12},
+  keywords  = {parsl, parallel programming, python},
+  location  = {Phoenix, AZ, USA},
+  series    = {HPDC '19}
+}
+
