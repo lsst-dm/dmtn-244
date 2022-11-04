@@ -1,4 +1,5 @@
 DOCNAME = P52
+-include makedefs
 
 tex = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
@@ -10,6 +11,12 @@ ifneq "$(GITSTATUS)" ""
 endif
 
 export TEXMFHOME ?= lsst-texmf/texmf
+FILESPDF  = $(P).pdf copyrightForm_$(P)_$(A).pdf
+FILESTEX  = $(P).tex $(P).bib $(FIGS) makedefs
+FILESASP  = asp2014.bst asp2014.sty
+FILES4AR  = $(FILESTEX) $(FILESPDF)
+TAR_FILE  = $(P).tar.gz
+
 
 #asp tex is a bit odd so latexml fails ..
 $(DOCNAME).pdf: $(tex) meta.tex local.bib authors.tex acronyms.tex
@@ -33,8 +40,11 @@ clean:
 	latexmk -c
 	rm -f $(DOCNAME).bbl
 	rm -f $(DOCNAME).pdf
+	rm -f $(DOCNAME).dvi
 	rm -f meta.tex
 	rm -f authors.tex
+	rm -f acronyms.tex
+	rm -f *.pyc
 
 .FORCE:
 
@@ -46,3 +56,9 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\lsstDocNum}{$(DOCNUMBER)}' >>$@
 	/bin/echo '\newcommand{\vcsRevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsDate}{$(GITDATE)}' >>$@
+
+check:
+	./PaperCheck.py $(P) $(A)
+
+tar:    $(FILES4AR)
+	tar zcf $(TAR_FILE) $(FILES4AR) newKeywords.txt
