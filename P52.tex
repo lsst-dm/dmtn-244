@@ -76,7 +76,7 @@ and how the system is used by pipeline developers.
 
 \section{Introduction}
 
-A large amount of images will be taken during the 10-year Legacy Survey
+A large number of images will be taken during the 10-year Legacy Survey
 of Space and Time \citep[LSST;][]{2019ApJ...873..111I, I08_adassxxxii}.
 Processing of this data will be done at scales ranging from small runs
 up through large production data release runs.  Data processing will be
@@ -84,8 +84,8 @@ done using data management and execution systems for the Rubin Observatory
 LSST Science Pipelines with the Data Butler and science-oriented execution
 graphs \citep{C24_adassxxxii,2022SPIE12189E..11J}.
 
-The Data Butler is the system that abstracts the data access de-tails from
-the pipeline developers.  A Quantum is the work to be done on a single set
+The Data Butler is the system that abstracts the data ac\-cess de\-tails from
+the pipe\-line de\-vel\-opers.  A Quantum is the work to be done on a single set
 of inputs (e.g., remove instrument signature on the raw image for detector
 3 of exposure 12345). These Quanta take inputs and produce outputs which
 affect the order in which they can be executed.  This science-oriented
@@ -151,15 +151,15 @@ clustered.
 
 The method used to perform the clustering is a submit time configuration.
 Clustering is independent of the workflow management system.  There
-are currently two clustering methods supported by the core team: the
+are currently two clustering methods supported: the
 original behavior where each Quantum is its own cluster and a user-specified
 clustering.  The user-specified clustering is done by common data values
 (e.g., same detector) to help maximize the execution of Quanta in the
 workflow.
 
 \subsection{Generic Workflow} \label{generic_workflow}
-The generic workflow is a directed acyclic graph con-tain-ing run-time
-in-for-ma-tion needed to submit to a workflow management system.  Each
+The generic workflow is a directed a\-cyclic graph con\-tain\-ing run\-time
+in\-form\-a\-tion need\-ed to sub\-mit to a workflow management system.  Each
 cluster becomes a job in the workflow.  The job's command line and
 resource requirements (e.g., memory, cpu, walltime, batch queue) are
 added here.  In addition to jobs representing clusters, two special jobs
@@ -168,8 +168,9 @@ about the run such as software stack versions and configuration.  Some
 of this information is used by later jobs.  The other special job is the
 last job in the workflow.  The final job records the workflow output
 datasets in the Butler repository.  This always needs to be executed
-whether there was a job failure or not so it cannot be added as the
-only sink job in the workflow graph.
+whether there was a job failure or not.  Because failures halt execution
+along paths in the workflow, this final job cannot be added as a normal
+job to the workflow graph.
 
 \section{After Submission}
 There are a few actions users want to take on submitted workflows.  The
@@ -197,17 +198,17 @@ There have been a few workflow features that LSST workflows need that
 cause difficulties for various workflow management systems.
 
 The Butler abstracts the data location from the code.  It can directly
-read and write files in the repository making local cached copies when
-needed.  Therefore, science inputs and outputs do not need to be managed
-by the workflow system and are currently not included in the workflow.
-This means that the workflow system needs to support job dependencies
-without data dependencies or the plugin will need to fake the data
-dependencies.
+read and write files in the repository making local cached copies
+when needed.  Therefore, the science inputs and outputs are currently
+not included in the workflow, and the workflow system can expect the
+data to be in place when the jobs run.  This means that the workflow
+system needs to support job dependencies without data dependencies or
+the plugin will need to fake the data dependencies.
 
-There is a special final job that needs to be executed regardless of
-whether a job failed.  This means that it cannot be the workflow's
-single sink node as a science job failure would keep this final job
-from executing.
+There is the final job (see subsection \ref{generic_workflow}) that should be
+executed regardless of whether a job failed.  This is not typical behavior
+for jobs in most workflow systems, so the workflow system needs to have
+special support for this kind of job.
 
 In order to efficiently share compute resources, many workload schedulers
 require knowing how much memory a job will need.  Different input data can
@@ -237,11 +238,12 @@ became less informative for the user with clustering.  They want to know
 which Quanta failed and for what reason.  Clustering also has caused
 problems with the current command lines.  Work is ongoing for a special
 job runner that will solve the long command line issue as well as open
-avenues for doing other things inside a job across multiple workflow
+avenues for other job-related functions across multiple workflow
 management systems such as sending output to real-time log aggregators.
 
-\acknowledgements This material is based upon work supported in part by
-the National Science Foundation through Cooperative Agreement AST-1258333
+\acknowledgements We thank Richard Dubois for his review of this
+manuscript.  This material is based upon work supported in part by the
+National Science Foundation through Cooperative Agreement AST-1258333
 and Cooperative Support Agreement AST-1202910 managed by the Association
 of Universities for Research in Astronomy (AURA), and the Department
 of Energy under Contract No.\ DE-AC02-76SF00515 with the SLAC National
