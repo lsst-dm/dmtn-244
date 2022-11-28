@@ -9,6 +9,7 @@
 
 \documentclass[11pt,twoside]{article}
 \usepackage{asp2014}
+\pdfoutput=1
 
 \aspSuppressVolSlug
 \resetcounters
@@ -251,7 +252,62 @@ Accelerator Laboratory managed by Stanford University. Additional Rubin
 Observatory funding comes from private donations, grants to universities,
 and in-kind support from LSSTC Institutional Members.
 
-\bibliography{P52}
+
+\begin{thebibliography}{}
+    \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+    \expandafter\ifx\csname url\endcsname\relax
+      \def\url#1{\texttt{#1}}\fi
+    \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+    \providecommand{\eprint}[2][]{\url{#2}}
+
+    \bibitem[{Babuji et~al.(2019)}]{10.1145/3307681.3325400}
+    Babuji, Y., et~al. 2019, in Proceedings of the 28th International Symposium on
+      High-Performance Parallel and Distributed Computing (New York, NY, USA:
+      Association for Computing Machinery), HPDC '19, 25–36.
+      doi:10.1145/3307681.3325400
+
+    \bibitem[{Deelman et~al.(2015)}]{10.1016/j.future.2014.10.008}
+    Deelman, E., et~al. 2015, Future Generation Computer Systems, 46, 17.
+      doi:10.1016/j.future.2014.10.008
+
+    \bibitem[{{Ivezi{\'c}} et~al.(2019)}]{2019ApJ...873..111I}
+    {Ivezi{\'c}}, {\v Z}., et~al. 2019, \apj, 873, 111.
+      doi:10.3847/1538-4357/ab042c, arXiv:0805.2366
+
+    \bibitem[{{Jenness} et~al.(2022)}]{2022SPIE12189E..11J}
+    {Jenness}, T., et~al. 2022, in Software and Cyberinfrastructure for Astronomy
+      VII, vol. 12189 of Proc.\ SPIE, 1218911. doi:10.1117/12.2629569,
+      arXiv:2206.14941
+
+    \bibitem[{{Lust} et~al.(2023)}]{C24_adassxxxii}
+    {Lust}, N., et~al. 2023, in ADASS XXXII, edited by S.~{Gaudet}, S.~{Gwyn},
+      P.~{Dowler}, D.~{Bohlender}, \& A.~{Hincks} (San Francisco), vol. TBD of ASP
+      Conf. Ser., 999 TBD
+
+    \bibitem[{Maeno et~al.(2011)}]{10.1088/1742-6596/331/7/072024}
+    Maeno, T., et~al. 2011, Journal of Physics: Conference Series, 331, 072024.
+      doi:10.1088/1742-6596/331/7/072024
+
+    \bibitem[{{O'Mullane} et~al.(2021)}]{2021arXiv211115030O}
+    {O'Mullane}, W., et~al. 2021, in ADASS XXI, ASP Conf.\ Ser., in press.
+      arXiv:2111.15030
+
+    \bibitem[{{O'Mullane} et~al.(2023)}]{I08_adassxxxii}
+    --- 2023, in ADASS XXXII, edited by S.~{Gaudet}, S.~{Gwyn}, P.~{Dowler},
+      D.~{Bohlender}, \& A.~{Hincks} (San Francisco), vol. TBD of ASP Conf. Ser.,
+      999 TBD. arXiv:2211.13611
+
+    \bibitem[{Thain et~al.(2005)Thain, Tannenbaum, \& Livny}]{10.1002/cpe.938}
+    Thain, D., Tannenbaum, T., \& Livny, M. 2005, Concurrency and computation:
+      practice and experience, 17, 323. doi:10.1002/cpe.938
+
+    \bibitem[{Yanny et~al.(2022)Yanny, Kuropatkin, Lin, Adelman-McCarthy, Slater,
+      \& Chiang}]{RTN-039}
+    Yanny, B., Kuropatkin, N., Lin, H., Adelman-McCarthy, J., Slater, C., \&
+      Chiang, H.-F. 2022, {Compute Resource Usage of DP0.2 Production Run}.
+      \urlprefix\url{https://rtn-039.lsst.io/}
+
+    \end{thebibliography}
 
 
 
